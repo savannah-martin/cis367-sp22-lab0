@@ -1,6 +1,8 @@
 const express = require('express');
-
 const app = express();
+
+const hostname = "localhost";
+const port = 3000;
 
 app.get('/', (req, res)=> {
     res.send("Hey, it works!");
@@ -17,7 +19,7 @@ app.get('/pokemon', (req, res)=> {
 
 // Route Parameters
 // /pokemon/pikachu
-app.get('/timeten/:id', (req, res)=> {
+app.get('/timesten/:id', (req, res)=> {
 
     let id = parseInt(req.params.id);
     console.log(id);
@@ -26,7 +28,7 @@ app.get('/timeten/:id', (req, res)=> {
 
 });
 
-const port = 3000
+
 app.listen(port, ()=> {
-    console.log(`Listening on port ${port} ...`);
+    console.log(`Listening on http://${hostname}:${port} ...`);
 });
